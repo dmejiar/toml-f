@@ -89,6 +89,8 @@ install(
 )
 
 # add the testsuite
-enable_testing()
-set(fpm-toml "${PROJECT_SOURCE_DIR}/fpm.toml")
-add_subdirectory("test")
+if(WITH_TESTS)
+  enable_testing()
+  set(fpm-toml "${PROJECT_SOURCE_DIR}/fpm.toml")
+  add_subdirectory("test")
+endif()
